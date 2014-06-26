@@ -30,12 +30,12 @@ class BookInfo
 
   # 書籍情報を取得
   def fetch!
-    fetch_page_info
+    fetch_book_info
     fetch_page_count
   end
 
   # 楽天ブックス書籍検索 API から書籍情報を取得
-  def fetch_page_info
+  def fetch_book_info
     uri = URI.parse("https://app.rakuten.co.jp/services/api/BooksBook/Search/20130522?applicationId=#{@application_id}&isbn=#{@isbn}")
     json = Net::HTTP.get(uri)
     result = JSON.parse(json)
