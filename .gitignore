@@ -1,0 +1,5 @@
+*.csv
+.bundle
+.DS_Store
+
+setting.yml
